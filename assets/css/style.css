@@ -4,6 +4,13 @@
 :root{
     --primary-color: rgb(77, 77, 77);
 }
+h1{
+    font-size: 20px;
+}
+p{
+    font-size: 14px;
+
+}
 body{
     padding: 0;
     margin: 0;
@@ -126,11 +133,11 @@ nav ul li a{
     position: relative;
 }
 .home .content{
-    width: 40%;
+    width: 50%;
     background-color: var(--primary-color);
     margin: 65px;
     color: #fff;
-    padding: 53px;
+    padding: 20px;
     border-radius: 20px;
 }
 .home .image{
@@ -138,28 +145,29 @@ nav ul li a{
 }
 span.ide {
     position: absolute;
-    top: 42px;
+    top: 41px;
     background: #fff;
-    color: #000;
-    border: 1px solid #000;
-    padding: 10px;
+    color: #ff0f0f;
+    border: 3px solid #69b7f9;
+    padding: 0 10px;
     text-align: center;
+    border-radius: 5px;
 }
 .ide img{
-    width: 25px;
+    width: 40px;
     float: left;
 }
 .ide p{
     float: left;
-    margin: 5px;
+    /* margin: 5px; */
+    font-size: 15px;
 }
 .web-ide{
     padding: 0;
-    --num:0;
-    list-style: calc(var(--num)+1);
+    list-style: decimal;
 }
 .web-ide li::marker{
-    color: blue;
+    color: rgb(255, 255, 255);
     padding: 10px;
     background-color: #000;
 }
@@ -180,13 +188,69 @@ top:90%;
 left: 80%;
 }
 .profile{
-    width: 70%;
+    width: 60%;
+    height: 70%;
     background-color: var(--primary-color);
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    height: 140%;
-    filter: drop-shadow(2px 4px 6px black);
+    height: 130%;
+    /* overflow-x: hidden; */
 }
+.person{
+    filter: drop-shadow(2px 4px 6px rgb(121, 121, 121));
+    width: 150%;
+    margin-top: -34.8%;
+    margin-left: -24%;
+    border-radius: 50%;
+}
+.typing {
+    color: #fff;
+    overflow: hidden;
+    border-right: 0.15em solid rgb(0, 0, 0);
+    white-space: nowrap;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(30, end) 1,
+      cursor-blink 0.75s step-end infinite;
+  }
+  .typing-p{
+      display: none;
+    color: #fff;
+    overflow: hidden;
+    border-right: 0.15em solid rgb(0, 0, 0);
+    white-space: nowrap;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(30, end) 1,
+      cursor-blink 0.75s step-end infinite;
+      /* animation-delay: 3.5s; */
+  }
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes cursor-blink {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: rgb(0, 0, 0);
+    }
+  }
+  .wave{
+      width: 100%;
+  }
+
+  .skills{
+      background-color: var(--primary-color);
+      width: 100%;
+  }

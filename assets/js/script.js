@@ -76,3 +76,9 @@ function objLoop() {
 }
 //run forward function once
 objLoop();  
+
+// document.getElementsByClassName('typing');
+setTimeout(() => {
+    document.getElementsByClassName('typing')[0].style.borderRight = 'none'
+    document.getElementsByClassName('typing-p')[0].style.display = 'block';
+},3500);
