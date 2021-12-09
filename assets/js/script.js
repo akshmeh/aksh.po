@@ -82,3 +82,111 @@ setTimeout(() => {
     document.getElementsByClassName('typing')[0].style.borderRight = 'none'
     document.getElementsByClassName('typing-p')[0].style.display = 'block';
 },3500);
+
+
+
+//obstecals move
+var skilObs = document.getElementsByClassName('skill-obstecals'),
+play = document.getElementsByClassName('play'),
+base =  document.querySelector('.base'),
+character = document.querySelector('.character');
+play[0].addEventListener('click',()=>{
+   base.style.borderBottom = '3px solid var(--primary-color)';
+   character.style.display = 'block'
+   skilObs[0].style.display = 'block'
+   play[0].style.display = 'none'
+   startMove();
+})
+
+var startPoint = 0;
+function startMove(){
+    setTimeout(function () {
+        var leftMin = startPoint +'px'
+        skilObs[0].style.marginLeft = leftMin;
+        startPoint--
+        // console.log('true');
+        if(startPoint >= -2000){
+            startMove()
+        }
+    }, 20);
+}
+// jump button click
+// var obsmovLeft = false
+// document.addEventListener('keydown',press);
+// function press(e){
+//     if(e.keyCode === 38 || e.keyCode === 87){
+//         console.log('true');
+//         obsmovLeft = true
+//     }
+    
+// }
+// document.addEventListener('keyup',realease);
+// function realease(e){
+//     if(e.keyCode === 38 || e.keyCode === 87){
+//         obsmovLeft = false
+//     }
+    
+// }
+// if(obsmovLeft){
+// console.log('obsmovLeft');
+//     jumpMove();
+// }
+var leftArrow = false,
+rightArrow = false
+document.addEventListener('keydown',press)
+function press(e){
+ if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */){
+   rightArrow = true
+ }
+
+}
+document.addEventListener('keyup',release)
+function release(e){
+ if (e.keyCode === 39 /* right */ || e.keyCode === 68 /* d */){
+   rightArrow = false
+ }
+
+}
+
+var moves = true
+setInterval(() => {
+
+ if(rightArrow && jumpStart == 72){
+console.log('true');
+// moves = true
+jumpMove()
+}}, 100);
+var jumpSpeed = 8
+var jumpStart = 72,
+jumpBack = 20;
+function jumpMove(){
+    // console.log('work');
+    setTimeout(function () {
+        var topDec = jumpStart + '%'
+        character.style.top = topDec;
+        jumpStart--;
+         if(jumpStart>19){
+             jumpMove()
+            }if(character.style.top == '20%'){
+            jumpBack = 20
+            console.log('work');
+            airPause()
+        }
+    }, jumpSpeed);
+} 
+function airPause(){
+setTimeout(() => {
+    normalJump()
+}, 2000);
+}
+function normalJump(){
+    setTimeout(function () {
+        var topInc = jumpBack + '%'
+        character.style.top = topInc;
+        jumpBack++;
+        if(jumpBack <73){
+        // if(character.style.top == '72%'){
+            jumpStart = 72
+            normalJump()
+        }
+    }, jumpSpeed)}

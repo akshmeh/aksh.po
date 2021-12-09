@@ -7,6 +7,7 @@
 h1{
     font-size: 20px;
 }
+
 p{
     font-size: 14px;
 
@@ -15,6 +16,7 @@ body{
     padding: 0;
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
+    background-color: rgb(228, 247, 244);
 }
 
 header{
@@ -253,4 +255,99 @@ left: 80%;
   .skills{
       background-color: var(--primary-color);
       width: 100%;
+      margin-top: -5px;
+      padding-bottom: 40px;
+  }
+  .heading{
+      width: 100%;
+      padding: 20px;
+  }
+  .heading h2{
+      text-align: center;
+  }
+  .skill-game{
+      width: 95%;
+      margin: 15px;
+      background-color: #fff;
+      height: 300px;
+      animation: borderChange 5s linear infinite;
+      border-width: 5px;
+      border-style: solid;
+      border-radius: 30px;
+      position: relative;
+      
+  }
+  @keyframes borderChange {
+      0%{
+          border-color: #fff;
+      }
+      20%{
+        border-color: rgb(238, 238, 238);
+      }
+      40%{
+        border-color: rgb(160, 160, 160);
+      }
+      60%{
+        border-color: rgb(146, 146, 146);
+      }
+      80%{
+        border-color: rgb(190, 190, 190);
+      }
+      100%{
+        border-color: #fff;
+      }
+  }
+  .base{
+      content: '';
+      position: absolute;
+      border-bottom: 0px solid var(--primary-color);
+      width: 100%;
+      top: 85%;
+      transition: 2s ;
+  }
+  .play{
+      width: 100px;
+      height: 100px;
+      background-color: rgb(138, 137, 137);
+      border-radius: 50%;
+      position: absolute;
+      top: 40%;
+      left: 48%;
+      display: block;
+      cursor: pointer;
+  }
+  .character{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      position: absolute;
+    top: 72%;
+    left: 10%;
+    display: none;
+    transition: 2s ;
+  }
+  .skill-obstecals{
+      width: 2000px;
+      display: none;
+  }
+  .obs-pos{
+    width: 100%;
+    overflow-x: hidden;
+    position: absolute;
+    top: 67%;
+    padding-left: 50%;
+  }
+  .skill-obstecals ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+  }
+  .skill-obstecals ul li{
+      list-style: none;
+      padding: 10px;
+      background-color: var(--primary-color);
+      color: #fff;
+      /* transform: rotate(90deg); */
   }
