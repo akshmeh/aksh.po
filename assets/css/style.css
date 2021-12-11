@@ -351,6 +351,14 @@ left: 80%;
       color: #fff;
       /* transform: rotate(90deg); */
   }
+  /* work */
+  .works{
+      background-color: var(--primary-color);
+  }
+  /* tool */
+.tools{
+    background-color: var(--primary-color);
+}
   .parent {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
